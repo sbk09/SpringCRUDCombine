@@ -25,5 +25,11 @@ public Student saveStudent(Student student) {
 	return repo.save(student);
 	
 }
+public Student getStudentbyid(int id) {
+	// TODO Auto-generated method stub
+	
+	Student s1= repo.findById(id).orElse(null);
+	return s1;
+}
 }
 
