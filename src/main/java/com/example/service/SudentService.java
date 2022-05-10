@@ -16,6 +16,12 @@ public class SudentService {
 		return repo.save(student);
 		
 		}
-	}
 	
+	
+	public Student updateMarks(int id, int marks) {
+		Student exitStudent=repo.findById(id).orElse(null);
+		exitStudent.setStd_marks(marks);
+		return repo.save(exitStudent);
+	}
+}
 
