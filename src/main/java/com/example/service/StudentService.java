@@ -1,19 +1,29 @@
 package com.example.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.entity.Student;
 import com.example.repository.StudentRepository;
 
+   
+	
+	
 @Component
 public class StudentService {
      @Autowired
-	private StudentRepository repository;
+	private StudentRepository repo;
 	public Student updateMarks(int id, int marks) {
-		Student exitStudent=repository.findById(id).orElse(null);
+		Student exitStudent=repo.findById(id).orElse(null);
 		exitStudent.setStd_marks(marks);
-		return repository.save(exitStudent);
+		return repo.save(exitStudent);
 	}
-
+public Student saveStudent(Student student) {
+	
+	return repo.save(student);
+	
 }
+}
+

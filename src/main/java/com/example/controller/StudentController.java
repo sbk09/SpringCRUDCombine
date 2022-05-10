@@ -1,6 +1,10 @@
 package com.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +17,19 @@ import com.example.service.StudentService;
 
 @RestController
 public class StudentController {
-	//controller//
 	@Autowired
-	private StudentService service;
+  private StudentService service;	
+	
+	//controller//
+
+	@PostMapping("/save")
+	public Student saveStudent(@RequestBody Student std) {
+		
+		return service.saveStudent(std);
+		
+	}
+	
+	
 	@GetMapping("/students")
 	public List<Student> getStudents(){
 		return null;
