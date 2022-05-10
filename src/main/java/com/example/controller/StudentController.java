@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Student;
-import com.example.service.SudentService;
+import com.example.service.StudentService;
 
 @RestController
 public class StudentController {
 	//controller//
 	@Autowired
-	private SudentService service;
+	private StudentService service;
 	@GetMapping("/students")
 	public List<Student> getStudents(){
 		return null;
