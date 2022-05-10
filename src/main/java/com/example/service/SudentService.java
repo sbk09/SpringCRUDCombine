@@ -1,5 +1,21 @@
 package com.example.service;
 
-public class SudentService {
+import java.util.List;
 
-}
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.entity.Student;
+import com.example.repository.StudentRepository;
+
+public class SudentService {
+   @Autowired 
+   private StudentRepository repo;
+   
+	public Student saveStudent(Student student) {
+		
+		return repo.save(student);
+		
+		}
+	}
+	
+
